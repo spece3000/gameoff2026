@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bslpjg8rmc7l5"]
+
+[ext_resource type="Script" uid="uid://4ysj1g2juxnt" path="res://code/hero/square.gd" id="1_6hmxa"]
+[ext_resource type="Texture2D" uid="uid://bxhbr81eqcpel" path="res://assets/hero/square_figure.png" id="2_6hmxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4edpx"]
+size = Vector2(250, 252)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=749853199]
+collision_layer = 4
+script = ExtResource("1_6hmxa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1628190011]
+texture = ExtResource("2_6hmxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=891305910]
+shape = SubResource("RectangleShape2D_4edpx")

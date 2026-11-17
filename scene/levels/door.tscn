@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://csugqaby5unv1"]
+
+[ext_resource type="Texture2D" uid="uid://duuctsu40tmvl" path="res://assets/environment/active_environment.png" id="1_iq5uy"]
+[ext_resource type="Script" uid="uid://o1rcb3mibegu" path="res://code/environment/door.gd" id="1_m78hl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um6to"]
+atlas = ExtResource("1_iq5uy")
+region = Rect2(640, 0, 320, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54pov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um6to")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b8mkl"]
+radius = 54.0
+height = 654.0
+
+[node name="door" type="AnimatableBody2D" unique_id=1535569223]
+scale = Vector2(0.4, 0.4)
+collision_layer = 8
+collision_mask = 23
+script = ExtResource("1_m78hl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=968980721]
+sprite_frames = SubResource("SpriteFrames_54pov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1872658045]
+shape = SubResource("CapsuleShape2D_b8mkl")

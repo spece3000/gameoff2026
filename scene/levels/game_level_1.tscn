@@ -1,0 +1,132 @@
+[gd_scene format=4 uid="uid://dvl4ga3xb7pt7"]
+
+[ext_resource type="PackedScene" uid="uid://bhqxik7wa0kk3" path="res://scene/hero/player.tscn" id="1_k55qt"]
+[ext_resource type="Texture2D" uid="uid://bdvobvbw1ia2s" path="res://assets/environment/tileset_ground_1.png" id="1_x1tuh"]
+[ext_resource type="Texture2D" uid="uid://c3igm18tyr6nh" path="res://assets/environment/tileset_ground_1-1.png" id="2_j35me"]
+[ext_resource type="Script" uid="uid://cvg6d26m352vy" path="res://code/hero/switch.gd" id="2_kbx6g"]
+[ext_resource type="PackedScene" uid="uid://2qn2q5203ppv" path="res://scene/hero/player_triangle.tscn" id="4_o6w6n"]
+[ext_resource type="Texture2D" uid="uid://duuctsu40tmvl" path="res://assets/environment/active_environment.png" id="5_x1tuh"]
+[ext_resource type="PackedScene" uid="uid://c6s5prrlhoqx1" path="res://scene/levels/bg.tscn" id="6_j35me"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6w6n"]
+texture = ExtResource("1_x1tuh")
+texture_region_size = Vector2i(320, 320)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-160, -160, 160, -160, 160, 160, -160, 160)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd315"]
+texture = ExtResource("2_j35me")
+texture_region_size = Vector2i(320, 320)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vgj8q"]
+tile_size = Vector2i(320, 320)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
+sources/1 = SubResource("TileSetAtlasSource_o6w6n")
+sources/2 = SubResource("TileSetAtlasSource_nd315")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j35me"]
+texture = ExtResource("5_x1tuh")
+texture_region_size = Vector2i(320, 320)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4edpx"]
+tile_size = Vector2i(320, 320)
+sources/1 = SubResource("TileSetAtlasSource_j35me")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4edpx"]
+size = Vector2(128, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgj8q"]
+size = Vector2(300, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd315"]
+size = Vector2(61, 201.5)
+
+[node name="game_level_1" type="Node2D" unique_id=1024245409]
+
+[node name="ground" type="TileMapLayer" parent="." unique_id=1451602163]
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAABAAcAAQABAAAAAAACAAcAAQABAAAAAAADAAcAAQABAAAAAAAEAAcAAQABAAAAAAAFAAcAAQABAAAAAAAGAAcAAQABAAAAAAAHAAcAAQABAAAAAAAMAAcAAQABAAAAAAANAAcAAQABAAAAAAAOAAcAAQABAAAAAAAPAAcAAQABAAAAAAAQAAcAAQABAAAAAAABAAgAAQABAAEAAAACAAgAAQABAAEAAAADAAgAAQABAAEAAAAEAAgAAQABAAEAAAAFAAgAAQABAAEAAAAGAAgAAQABAAEAAAAHAAgAAQABAAEAAAAMAAgAAQABAAEAAAANAAgAAQABAAEAAAAOAAgAAQABAAEAAAAPAAgAAQABAAEAAAAQAAgAAQABAAEAAAAPAAkAAQABAAEAAAAOAAkAAQABAAEAAAANAAkAAQABAAEAAAAMAAkAAQABAAEAAAAGAAkAAQABAAEAAAAFAAkAAQABAAEAAAAEAAkAAQABAAEAAAADAAkAAQABAAEAAAACAAkAAQABAAEAAAABAAkAAQABAAEAAAAHAAkAAQABAAEAAAAQAAkAAQABAAEAAAARAAcAAQACAAAAAAAMAAYAAQABAAEAAAABAAoAAQABAAEAAAACAAoAAQABAAEAAAADAAoAAQABAAEAAAAEAAoAAQABAAEAAAAFAAoAAQABAAEAAAAGAAoAAQABAAEAAAAHAAoAAQABAAEAAAAMAAoAAQABAAEAAAANAAoAAQABAAEAAAAOAAoAAQABAAEAAAAPAAoAAQABAAEAAAAQAAoAAQABAAEAAAARAAoAAQACAAEAAAARAAkAAQACAAEAAAARAAgAAQACAAEAAAAAAAoAAQAAAAEAAAAAAAkAAQAAAAEAAAAAAAgAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_vgj8q")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2147440622]
+script = ExtResource("2_kbx6g")
+
+[node name="player_triangle" parent="Node2D" unique_id=258871711 instance=ExtResource("4_o6w6n")]
+position = Vector2(198, 395)
+
+[node name="player_triangle2" parent="Node2D" unique_id=1977602338 instance=ExtResource("4_o6w6n")]
+position = Vector2(273, 395)
+
+[node name="player3" parent="Node2D" unique_id=655213039 instance=ExtResource("1_k55qt")]
+position = Vector2(36, 397)
+
+[node name="active_environment" type="TileMapLayer" parent="." unique_id=928354847]
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray("AAAQAAQAAQAAAAAAAAAQAAUAAQAAAAEAAAAQAAYAAQAAAAIAAAARAAQAAQABAAAAAAARAAUAAQABAAEAAAA=")
+tile_set = SubResource("TileSet_4edpx")
+
+[node name="win" type="Area2D" parent="." unique_id=1781877913]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="win" unique_id=1298685250]
+position = Vector2(449, 350)
+shape = SubResource("RectangleShape2D_4edpx")
+
+[node name="dead" type="Area2D" parent="." unique_id=93339603]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dead" unique_id=1818096297]
+position = Vector2(645, 674)
+shape = SubResource("RectangleShape2D_vgj8q")
+
+[node name="dead2" type="Area2D" parent="." unique_id=1259878358]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dead2" unique_id=710867426]
+position = Vector2(-50, 371)
+shape = SubResource("RectangleShape2D_nd315")
+
+[node name="bg" parent="." unique_id=390580329 instance=ExtResource("6_j35me")]
+
+[connection signal="body_entered" from="win" to="Node2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="dead" to="Node2D" method="_on_dead_body_entered"]
+[connection signal="body_entered" from="dead2" to="Node2D" method="_on_dead_body_entered"]

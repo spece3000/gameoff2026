@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://diy8h4guxvgfl"]
+
+[ext_resource type="Script" uid="uid://p2qaj8r6ixdi" path="res://code/hero/circle.gd" id="1_8pe5x"]
+[ext_resource type="Texture2D" uid="uid://cw43tku14ttxm" path="res://assets/hero/circle_figure.png" id="2_q1fgg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o3big"]
+friction = 0.5
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpvnc"]
+radius = 122.80879
+
+[node name="rigit" type="RigidBody2D" unique_id=210142197]
+collision_layer = 16
+collision_mask = 23
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_o3big")
+angular_damp = 10.0
+script = ExtResource("1_8pe5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1628190011]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_q1fgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=891305910]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_bpvnc")
